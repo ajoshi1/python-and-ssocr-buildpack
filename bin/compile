@@ -27,17 +27,20 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   echo "----------------- USING CONDA BUILDPACK -----------------"
   $BIN_DIR/steps/conda-install $BUILD_DIR $CACHE_DIR
   # Install ssocr
-  apt-get update
-  apt-get install libimlib2 -y
-  apt-get install libimlib2-dev -y
+  #apt-get update
+  #apt-get install libimlib2 -y
+  #apt-get install libimlib2-dev -y
 
-  wget --progress=bar 'http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.16.3.tar.bz2'
-  tar -xjvf 'ssocr-2.16.3.tar.bz2'
-  cd 'ssocr-2.16.3'
+  curl http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.16.3.tar.bz2 > $BUILD_DIR/ssocr-2.16.3.tar.bz2
+  tar -xjvf $BUILD_PATH/ssocr-2.16.3.tar.bz2
+
+  pushd
+
+  cd $BUILD_PATH/ssocr-2.16.3
   make
 
-  cp ssocr ../libs/ssocr
-  
+  popod
+
   exit 0
 fi
 

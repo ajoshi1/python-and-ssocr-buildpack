@@ -34,14 +34,14 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   #curl http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.16.3.tar.bz2 > $BUILD_DIR/ssocr-2.16.3.tar.bz2
   #tar -xjvf $BUILD_PATH/libs/socr-2.16.3.tar.bz2
 
-  pushd
+  #pushd
 
   cd $BUILD_PATH/libs/socr-2.16.3
   make
 
   cp ssocr ../ssocr
 
-  popod
+  #popod
 
   exit 0
 fi

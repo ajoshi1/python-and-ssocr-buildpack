@@ -35,11 +35,13 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   #tar -xjvf $BUILD_PATH/libs/socr-2.16.3.tar.bz2
 
   #pushd
+  echo '********************* >>>>'
+  echo $BULD_DIR
+  echo $CACHE_DIR
+  #cd $BUILD_PATH/libs/socr-2.16.3
+  #make
 
-  cd $BUILD_PATH/libs/socr-2.16.3
-  make
-
-  cp ssocr ../ssocr
+  #cp ssocr ../ssocr
 
   #popod
 

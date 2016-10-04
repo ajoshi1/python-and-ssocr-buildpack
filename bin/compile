@@ -32,6 +32,8 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   echo "cache : ${CACHE_DIR}"
 
   cd $BUILD_DIR/libs/imlib2-1.4.8
+  
+  autoreconf -f -i
   ./configure --prefix=/app/libs/local
   make install
 

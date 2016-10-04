@@ -26,19 +26,13 @@ ENV_DIR=$3
 if [ -f $BUILD_DIR/environment.yml ]; then
   echo "----------------- USING CONDA BUILDPACK -----------------"
   $BIN_DIR/steps/conda-install $BUILD_DIR $CACHE_DIR
-  # Install ssocr
-  #apt-get update
-  #apt-get install libimlib2 -y
-  #apt-get install libimlib2-dev -y
 
-<<<<<<< HEAD
   echo '********************* >>>>'
   echo "build_dir: ${BUILD_DIR}"
   echo "cache : ${CACHE_DIR}"
 
   cd $BUILD_DIR/libs/imlib2-1.4.8
   
-  #autoreconf -f -i
   ./configure --prefix=/app/libs/local
   make install
 
@@ -49,22 +43,10 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   cp ssocr $BUILD_DIR/libs
 
   export LD_LIBRARY_PATH=/app/libs/local/lib
-=======
-  #curl http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.16.3.tar.bz2 > $BUILD_DIR/ssocr-2.16.3.tar.bz2
-  #tar -xjvf $BUILD_PATH/libs/socr-2.16.3.tar.bz2
->>>>>>> parent of 625b225... use BUILD_DIR
 
-  #pushd
   echo '********************* >>>>'
   echo $BULD_DIR
-  echo $CACHE_DIR
-  #cd $BUILD_PATH/libs/socr-2.16.3
-  #make
-
-  #cp ssocr ../ssocr
-
-  #popod
-
+  
   exit 0
 fi
 

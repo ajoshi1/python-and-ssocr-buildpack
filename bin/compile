@@ -32,12 +32,14 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   #apt-get install libimlib2-dev -y
 
   curl http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.16.3.tar.bz2 > $BUILD_DIR/ssocr-2.16.3.tar.bz2
-  tar -xjvf $BUILD_PATH/ssocr-2.16.3.tar.bz2
+  tar -xjvf $BUILD_PATH/libs/socr-2.16.3.tar.bz2
 
   pushd
 
-  cd $BUILD_PATH/ssocr-2.16.3
+  cd $BUILD_PATH/libs/socr-2.16.3
   make
+
+  cp ssocr ../ssocr
 
   popod
 

@@ -31,6 +31,10 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   echo "build_dir: ${BUILD_DIR}"
   echo "cache : ${CACHE_DIR}"
 
+  cd $BUILD_DIR/libs/texinfo-4.5
+  ./configure --prefix=/app/libs/local
+  make install
+
   cd $BUILD_DIR/libs/autoconf-2.69
   ./configure --prefix=/app/libs/local
   make install

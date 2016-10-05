@@ -16,6 +16,9 @@ url_to_dependency_map:
   - match: imlib2
     name: imlib2
     version: 1.4.7
+  - match: ssocr
+    name: ssocr
+    version: 2.16.3
 
 dependencies:
   - name: libmemcache
@@ -35,7 +38,13 @@ dependencies:
     cf_stacks:
       - cflinuxfs2
     uri: https://launchpad.net/ubuntu/+archive/primary/+files/imlib2_1.4.7.orig.tar.gz
-    md5: 2e9d5054022945ed14935d5f61fc2145
+    md5: f5a1c06ce6e4656a04838a4db8c686b0
+  - name: ssocr
+    version: 2.16.3
+    cf_stacks:
+      - cflinuxfs2
+    uri: https://www.unix-ag.uni-kl.de/\~auerswal/ssocr/ssocr-2.16.3.tar.bz2
+    md5: dd5629494e88a766365a3eb230cae933
   - name: python
     version: 2.7.11
     cf_stacks:

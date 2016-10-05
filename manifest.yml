@@ -13,6 +13,9 @@ url_to_dependency_map:
   - match: libffi
     name: libffi
     version: "3.1"
+  - match: imlib2
+    name: imlib2
+    version: 1.4.7
 
 dependencies:
   - name: libmemcache
@@ -27,6 +30,12 @@ dependencies:
       - cflinuxfs2
     uri: https://buildpacks.cloudfoundry.org/python/binaries/cflinuxfs2/libffi.tar.gz
     md5: 83028a299b8ac323bda8a56c5c70d4cd
+  - name: imlib2
+    version: 1.4.7
+    cf_stacks:
+      - cflinuxfs2
+    uri: https://launchpad.net/ubuntu/+archive/primary/+files/imlib2_1.4.7.orig.tar.gz
+    md5: 2e9d5054022945ed14935d5f61fc2145
   - name: python
     version: 2.7.11
     cf_stacks:

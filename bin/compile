@@ -21,6 +21,16 @@ ROOT_DIR=$(dirname $BIN_DIR)
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
+compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
+
+# install system level dependencies
+status ">@@>Installing system level dependencies..."
+mkdir -p $BUILD_DIR/.apt
+
+for DEB in $(ls -1 $compile_build_pack_dir/binary-dependencies/*.deb); do
+  status "Installing $(basename $DEB)"
+  dpkg -x $DEB $BUILD_DIR/.apt/
+done
 
 # Use miniconda if environment.yml exists and exit
 if [ -f $BUILD_DIR/environment.yml ]; then

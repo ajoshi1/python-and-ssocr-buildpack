@@ -24,11 +24,11 @@ ENV_DIR=$3
 compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
 
 # install system level dependencies
-status ">@@>Installing system level dependencies..."
+echo  ">@@>Installing system level dependencies..."
 mkdir -p $BUILD_DIR/.apt
 
 for DEB in $(ls -1 $compile_build_pack_dir/binary-dependencies/*.deb); do
-  status "Installing $(basename $DEB)"
+  echo "Installing $(basename $DEB)"
   dpkg -x $DEB $BUILD_DIR/.apt/
 done
 

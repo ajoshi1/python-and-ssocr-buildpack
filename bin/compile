@@ -27,7 +27,7 @@ compile_buildpack_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
 echo  ">@@>Installing system level dependencies..."
 mkdir -p $BUILD_DIR/.apt
 
-for DEB in $(ls -1 $compile_build_pack_dir/binary-dependencies/*.deb); do
+for DEB in $(ls -1 $compile_buildpack_dir/binary-dependencies/*.deb); do
   echo "Installing $(basename $DEB)"
   dpkg -x $DEB $BUILD_DIR/.apt/
 done

@@ -32,7 +32,7 @@ for DEB in $(ls -1 $compile_buildpack_dir/binary-dependencies/*.deb); do
   dpkg -x $DEB $BUILD_DIR/.apt/
 done
 
-set-env LD_LIBRARY_PATH '/app/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH'
+export LD_LIBRARY_PATH='/app/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH'
 echo 'install ssocr ...'
 tar xvfj $BUILD_DIR/lib/ssocr-2.16.3.tar.bz2
 pushd $BUILD_DIR/lib/ssocr-2.16.3

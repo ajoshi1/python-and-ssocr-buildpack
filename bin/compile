@@ -34,6 +34,7 @@ done
 
 export LD_LIBRARY_PATH=:/app/.apt/usr/lib/x86_64-linux-gnu:$BUILD_DIR/app/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 export PATH=:/app/.apt/usr/bin:$BUILD_DIR/.apt/usr/bin:$PATH
+export C_INCLUDE_PATH=/app/.apt/usr/include:$BUILD_DIR/.apt/usr/include:$C_INCLUDE_PATH
 echo 'install ssocr ...'
 pushd $BUILD_DIR/libs/
 tar xvfj ssocr-2.16.3.tar.bz2

@@ -32,7 +32,7 @@ for DEB in $(ls -1 $compile_buildpack_dir/binary-dependencies/*.deb); do
   dpkg -x $DEB $BUILD_DIR/.apt/
 done
 
-export LD_LIBRARY_PATH=:/app/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=:/app/.apt/usr/lib/x86_64-linux-gnu:$BUILD_DIR/app/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 export PATH=:/app/.apt/usr/bin:$BUILD_DIR/.apt/usr/bin:$PATH
 echo 'install ssocr ...'
 pushd $BUILD_DIR/libs/

@@ -29,8 +29,7 @@ mkdir -p $BUILD_DIR/.apt
 
 for DEB in $(ls -1 $compile_buildpack_dir/binary-dependencies/*.deb); do
   echo "Installing $(basename $DEB)"
-  #dpkg -x $DEB $BUILD_DIR/.apt/
-  dpkg -x $DEB /
+  dpkg -x $DEB $BUILD_DIR/.apt/
 done
 
 export LD_LIBRARY_PATH=:/app/.apt/usr/lib/x86_64-linux-gnu:$BUILD_DIR/app/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH

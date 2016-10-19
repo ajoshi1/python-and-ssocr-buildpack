@@ -73,6 +73,9 @@ echo "-----> Installing conda environment from environment.yml..."
 $CONDA_BIN/conda env update --quiet -n $CONDA_ENV -f "$BUILD_DIR/environment.yml"
 $CONDA_BIN/conda clean -pt
 
+#installing require opencv
+$CONDA_BIN/conda -c https://conda.binstar.org/menpo opencv
+
 echo "-----> Caching dependencies to $CONDA_ENVS_CACHE"
 cp -R $CONDA_ENVS/* $CONDA_ENVS_CACHE
 
